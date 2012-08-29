@@ -1,0 +1,40 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'eclipse'
+
+allprojects {
+    sourceCompatibility = 1.6
+    targetCompatibility = 1.6
+}
+
+eclipse {
+    classpath {
+        ext.defaultOutputDir = file('build')
+    }
+    project {
+        ext.defaultOutputDir = file('build')
+    }
+}
+
+repositories {
+    mavenLocal()    
+    mavenCentral()
+    [ 'https://repository.jboss.org/nexus/content/repositories/thirdparty-uploads',
+      'http://clojars.org/repo',
+      'http://mirrors.ibiblio.org/pub/mirrors/maven2/',
+      'http://mvnrepository.com/artifact',
+      'http://download.java.net/maven/2',
+      'http://repository.codehaus.org',
+      'http://snapshots.repository.codehaus.org' ].each { repo ->
+        maven {
+            url repo
+        }
+    }
+}
+
+dependencies {
+    compile 'com.google.inject:guice:3.0',
+            'org.mockito:mockito-all:1.8.5',
+            'candlepin:candlepin-api:0.7.6',
+            'log4j:log4j:1.2.17'
+}

@@ -1,0 +1,11 @@
+Import git://github.com/candlepin/candlepin.git into Eclipse
+Create run configuration from Export class
+Right-click this project in Eclipse, and select Export...
+Select Runnable Jar
+Check "Put dependencies in sub-directory beside jar"
+Specify path and jar name
+Export
+
+You will end up with a jar file that you can then use in another project, and call "new Export().export()" to generate a new manifest.
+
+This is not meant to be imported at this time. This is just a POC.
