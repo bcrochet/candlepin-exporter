@@ -35,6 +35,5 @@ repositories {
 dependencies {
     compile 'com.google.inject:guice:3.0',
             'org.mockito:mockito-all:1.8.5',
-            'candlepin:candlepin-api:0.7.6',
             'log4j:log4j:1.2.17'
 }
